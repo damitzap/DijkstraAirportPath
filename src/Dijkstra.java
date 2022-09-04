@@ -1,9 +1,17 @@
 import java.util.*;
 
-public class Djistra {
-
+public class Dijkstra {
+    private static void calculateMinimumDistance(Node evaluationNode, Double edgeWeigh, Node sourceNode) {
+        double sourceDistance = sourceNode.getDistance();
+        if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
+            evaluationNode.setDistance(sourceDistance + edgeWeigh);
+            LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
+            shortestPath.add(sourceNode);
+            evaluationNode.setShortestPath(shortestPath);
+        }
+    }
     public static Graph calculateShortestPathFromSource(Graph graph, Node source) {
-        source.setDistance(0);
+        source.setDistance(0.0);
 
         Set<Node> settledNodes = new HashSet<>();
         Set<Node> unsettledNodes = new HashSet<>();
@@ -13,10 +21,9 @@ public class Djistra {
         while (unsettledNodes.size() != 0) {
             Node currentNode = getLowestDistanceNode(unsettledNodes);
             unsettledNodes.remove(currentNode);
-            for (Entry < Node, Integer> adjacencyPair:
-                    currentNode.getAdjacentNodes().entrySet()) {
+            for (Map.Entry < Node, Double> adjacencyPair: currentNode.getAdjacentNodes().entrySet()) {
                 Node adjacentNode = adjacencyPair.getKey();
-                Integer edgeWeight = adjacencyPair.getValue();
+                Double edgeWeight = adjacencyPair.getValue();
                 if (!settledNodes.contains(adjacentNode)) {
                     calculateMinimumDistance(adjacentNode, edgeWeight, currentNode);
                     unsettledNodes.add(adjacentNode);
@@ -29,9 +36,9 @@ public class Djistra {
 
     private static Node getLowestDistanceNode(Set < Node > unsettledNodes) {
         Node lowestDistanceNode = null;
-        int lowestDistance = Integer.MAX_VALUE;
+        double lowestDistance = Double.MAX_VALUE;
         for (Node node: unsettledNodes) {
-            int nodeDistance = node.getDistance();
+            Double nodeDistance = node.getDistance();
             if (nodeDistance < lowestDistance) {
                 lowestDistance = nodeDistance;
                 lowestDistanceNode = node;
@@ -40,13 +47,5 @@ public class Djistra {
         return lowestDistanceNode;
     }
 
-    private static void CalculateMinimumDistance(Node evaluationNode,Integer edgeWeigh, Node sourceNode) {
-        Integer sourceDistance = sourceNode.getDistance();
-        if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
-            evaluationNode.setDistance(sourceDistance + edgeWeigh);
-            LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
-            shortestPath.add(sourceNode);
-            evaluationNode.setShortestPath(shortestPath);
-        }
-    }
+
 }
