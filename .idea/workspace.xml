@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="172b1f13-8828-4e8d-ae42-64a478f98893" name="Changes" comment="correção de bugs no armazenamento e recuperacao de dados do BD">
-      <change afterPath="$PROJECT_DIR$/src/MainScreen.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainScreen.java" afterDir="false" />
+    <list default="true" id="172b1f13-8828-4e8d-ae42-64a478f98893" name="Changes" comment="implementacao da interface grafica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AirportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AirportDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JSONImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JSONImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainScreen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainScreen.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662321569292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implementacao da interface grafica">
+      <created>1662341806403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662341806403</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="correção de bugs no armazenamento e recuperacao de dados do BD" />
-    <option name="LAST_COMMIT_MESSAGE" value="correção de bugs no armazenamento e recuperacao de dados do BD" />
+    <MESSAGE value="implementacao da interface grafica" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacao da interface grafica" />
   </component>
 </project>
