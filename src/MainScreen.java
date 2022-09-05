@@ -9,9 +9,9 @@ import java.util.*;
 
 public class MainScreen extends JFrame {
     private JLabel sourceAirpot;
-    private JComboBox cbOrigin;
+    private JComboBox cbAirportOrigin;
     private JLabel destinyAirport;
-    private JComboBox cbDestiny;
+    private JComboBox cbAirportDestiny;
     private JButton btnClear;
     private JButton btnCalculate;
     private JPanel mainPanel;
@@ -75,10 +75,10 @@ public class MainScreen extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 HashMap<String, Airport> airportsList = new AirportDAO().getAirports();
                 if(e.getStateChange() == ItemEvent.SELECTED){
-                    cbOrigin.removeAllItems();
+                    cbAirportOrigin.removeAllItems();
                     for(Airport ap : airportsList.values()){
                         if(ap.getCity().equals(cbCity.getSelectedItem())){
-                            cbOrigin.addItem(ap.getIata());
+                            cbAirportOrigin.addItem(ap.getIata());
                             lbIataSource.setText(ap.getNome());
                         }
                     }
@@ -132,38 +132,23 @@ public class MainScreen extends JFrame {
             public void itemStateChanged(ItemEvent e) {
                 HashMap<String, Airport> airportsList = new AirportDAO().getAirports();
                 if(e.getStateChange() == ItemEvent.SELECTED){
-                    cbDestiny.removeAllItems();
+                    cbAirportDestiny.removeAllItems();
                     for(Airport ap : airportsList.values()){
                         if(ap.getCity().equals(cbCityDestiny.getSelectedItem())){
-                            cbDestiny.addItem(ap.getIata());
+                            cbAirportDestiny.addItem(ap.getIata());
                             lbIataDestiny.setText(ap.getNome());
                         }
                     }
                 }
             }
         });
-//        cbDestiny.addAncestorListener(new AncestorListener() {
-//            @Override
-//            public void ancestorAdded(AncestorEvent event) {
-//                AirportDAO airportDAO = new AirportDAO();
-//                HashMap<String,Airport> airportsList = airportDAO.getAirports();
-//                cbDestiny.removeAll();
-//                for (Map.Entry<String,Airport> entry : airportsList.entrySet()){
-//                    cbDestiny.addItem(entry.getValue().getIata());
-//                }
-//            }
-//            @Override
-//            public void ancestorRemoved(AncestorEvent event) {}
-//            @Override
-//            public void ancestorMoved(AncestorEvent event) {}
-//        });
+//
 
         //Acao realizada apos o usuario apertar o botao para Calcular a menor rota
         btnCalculate.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-                String sourceAirport = (String) cbOrigin.getSelectedItem();
-                String destinyAirport = (String) cbDestiny.getSelectedItem();
+                String sourceAirport = (String) cbAirportOrigin.getSelectedItem();
+                String destinyAirport = (String) cbAirportDestiny.getSelectedItem();
 
                 Route routeSearch = new Route(sourceAirport,destinyAirport);
 
@@ -175,7 +160,6 @@ public class MainScreen extends JFrame {
                 ConsultResultsDAO consultResultsDAO = new ConsultResultsDAO();
                 AirportDAO airportDAO = new AirportDAO();
                 HashMap<String,Airport> airportsList = airportDAO.getAirports();
-
 
                 //Criacao do conjunto de Nos
                 for(Map.Entry<String,Airport> airport : airportsList.entrySet()) {
@@ -241,11 +225,8 @@ public class MainScreen extends JFrame {
                 lbResult.setText("");
             }
         });
-
     }
-
     public static void main(String[] args) {
         MainScreen mainScreen = new MainScreen();
-
     }
 }
