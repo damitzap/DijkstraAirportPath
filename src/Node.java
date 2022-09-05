@@ -1,10 +1,11 @@
+//Classe que representa os nós no grafo, o qual eh utilizado no algoritmo de Dijkstra
+//Cada Node eh considerado um aeroporto
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class Node {
-
     private Airport airport;
 
     public Airport getAirport() {
@@ -15,12 +16,12 @@ public class Node {
         this.airport = airport;
     }
 
-    private List<Node> shortestPath = new LinkedList<>();
 
     public String getName() {
         return airport.getIata();
     }
 
+    private List<Node> shortestPath = new LinkedList<>();
     public List<Node> getShortestPath() {
         return shortestPath;
     }
@@ -29,6 +30,12 @@ public class Node {
         this.shortestPath = shortestPath;
     }
 
+    public Node(Airport airport) {
+        this.airport = airport;
+    }
+
+    //Nós adjacentes
+    Map<Node, Double> adjacentNodes = new HashMap<>();
     public Map<Node, Double> getAdjacentNodes() {
         return adjacentNodes;
     }
@@ -47,15 +54,9 @@ public class Node {
         this.distance = distance;
     }
 
-    Map<Node, Double> adjacentNodes = new HashMap<>();
-
     public void addDestination(Node destination) {
         double distance = this.getAirport().distanceTo(destination.getAirport());
         adjacentNodes.put(destination, distance);
-    }
-
-    public Node(Airport airport) {
-        this.airport = airport;
     }
 
 

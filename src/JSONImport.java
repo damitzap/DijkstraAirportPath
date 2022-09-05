@@ -1,14 +1,14 @@
-import com.mysql.cj.xdevapi.JsonString;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.Iterator;
 
+//Classe utilizada para obter dados do arquivo JSON (routes.json) com as rotas realizadas por cada aeroporto
+//Nesse caso também foi realizada a complementação da tabela aeroportos, caso algum aeroporto fornecido pelo arquivo de rotas
+//não estivesse cadastrado
 public class JSONImport {
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -19,29 +19,30 @@ public class JSONImport {
         JSONObject js = (JSONObject) ob;
 
         Route route = new Route();
+        //Classes DAO para interface com o banco de dados
         RouteDAO routeDAO = new RouteDAO();
         AirportDAO airportDAO = new AirportDAO();
+
         Airport airport = null;
         for(Iterator<Object> i = js.keySet().iterator(); i.hasNext() ;){
-
+            //Leitura dos dados do arquivo JSON
             String key = i.next().toString();
-
             JSONObject jsData = (JSONObject) js.get(key);
             JSONArray jsRoute = (JSONArray) jsData.get("rotas");
-
             airport = airportDAO.getAirport(key);
 
+            //Armazenamento do Aeroporto
             if(airport == null){
                 airport = new Airport();
                 airport.setIata(key);
                 airport.setNome((String) jsData.get("nome"));
-                airport.setLocal("x");
+                airport.setState("x");
                 airport.setLatitude((Double) jsData.get("latitude"));
                 airport.setLongitude((Double) jsData.get("longitude"));
+                airport.setCity("x");
                 airportDAO.save(airport);
             }
-
-
+            //Armazenamento das Rotas
             for(Object a: jsRoute){
                 route.setIataOrigem(key);
                 route.setIataDestino(a.toString());

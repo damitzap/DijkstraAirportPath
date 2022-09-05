@@ -1,13 +1,10 @@
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AirportDAO {
 
     public void save(Airport airport){
-        String sql = "INSERT INTO airports(iata, Nome, location, latitude, longitude) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO airports(iata, Nome, state, latitude, longitude, city) VALUES (?, ?, ?, ?, ?, ?)";
         Connection connection = null;
         PreparedStatement pstm = null;
 
@@ -19,9 +16,11 @@ public class AirportDAO {
             //Adicao de valores que sao esperados pela query
             pstm.setString(1,airport.getIata());
             pstm.setString(2,airport.getNome());
-            pstm.setString(3,airport.getLocal());
+            pstm.setString(3,airport.getState());
             pstm.setDouble(4,airport.getLatitude());
             pstm.setDouble(5,airport.getLongitude());
+            pstm.setString(6,airport.getCity());
+
 
             //Execucao da query
             pstm.execute();
@@ -67,13 +66,15 @@ public class AirportDAO {
                 airport.setIata(rset.getString("iata"));
                 //Recuperar o Nome
                 airport.setNome(rset.getString("Nome"));
-                //Recuperar o Local
-                airport.setLocal(rset.getString("location"));
+                //Recuperar o Estado
+                airport.setState(rset.getString("state"));
                 //Recuperar a Latitude
                 airport.setLatitude(rset.getDouble("latitude"));
                 //Recuperar a Longitude
                 airport.setLongitude(rset.getDouble("longitude"));
-
+                //Recuperar a Cidade
+                airport.setCity(rset.getString("city"));
+                //Inserir dados no HashMap - Chave IATE, Aeroporto
                 airportsList.put(airport.getIata(), airport);
             }
         }catch (Exception  e){
@@ -121,11 +122,13 @@ public class AirportDAO {
                 //Recuperar o Nome
                 airport.setNome(rset.getString("Nome"));
                 //Recuperar o Local
-                airport.setLocal(rset.getString("location"));
+                airport.setState(rset.getString("state"));
                 //Recuperar a Latitude
                 airport.setLatitude(rset.getDouble("latitude"));
                 //Recuperar a Longitude
                 airport.setLongitude(rset.getDouble("longitude"));
+                //Recuperar a Cidade
+                airport.setCity(rset.getString("city"));
 
             }
         }catch (Exception  e){

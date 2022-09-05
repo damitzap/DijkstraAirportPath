@@ -1,8 +1,5 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class RouteDAO {
 
     public void save(Route route){
@@ -13,7 +10,7 @@ public class RouteDAO {
         try{
             //Criar conexao com o Banco de Dados
             connection = ConnectionModule.connector();
-            //Criar um PreparedStatemente para executar uma query;
+            //Criar um PreparedStatement para executar uma query;
             pstm = (PreparedStatement) connection.prepareStatement(sql);
             //Adicao de valores que sao esperados pela query
             pstm.setString(1,route.getIataOrigem());
@@ -80,6 +77,4 @@ public class RouteDAO {
         }
         return routes;
     }
-
-
 }

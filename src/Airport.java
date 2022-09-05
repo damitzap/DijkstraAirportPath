@@ -2,17 +2,21 @@ public class Airport {
     //Atributos do Aeroporto
     private String iata; //Id do aeroporto
     private String nome;
-    private String local;
+    private String state;
     private double latitude;
     private double longitude;
+    private String city;
+
+
 
     public Airport(){}
-    public Airport(String iata, String nome, String local, double latitude, double longitude) {
+    public Airport(String iata, String nome, String state, double latitude, double longitude, String city) {
         this.iata = iata;
         this.nome = nome;
-        this.local = local;
+        this.state = state;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.city = city;
     }
 
     public String getIata() {
@@ -31,12 +35,12 @@ public class Airport {
         this.nome = nome;
     }
 
-    public String getLocal() {
-        return local;
+    public String getState() {
+        return state;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public double getLatitude() {
@@ -53,6 +57,14 @@ public class Airport {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public double distanceTo(Airport destino) {

@@ -1,3 +1,4 @@
+//Classe para armazenamento da Rota - Aeroporto de Origem e Aeroporto de Destino
 public class Route {
     private String iataOrigem;
     private String iataDestino;
