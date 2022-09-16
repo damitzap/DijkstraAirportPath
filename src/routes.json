@@ -1,0 +1,511 @@
+{
+    "GRU": {
+        "nome": "Aeroporto Internacional de Sao Paulo",
+        "longitude": -46.481320528800595,
+        "latitude": -23.43779495,
+        "rotas": [
+            "BSB",
+            "CGB",
+            "CGR",
+            "CNF",
+            "CWB",
+            "GYN",
+            "POA",
+            "REC",
+            "SSA",
+            "BEL",
+            "FLN",
+            "FOR",
+            "GIG",
+            "IGU",
+            "JPA",
+            "MAO",
+            "MCZ",
+            "NAT",
+            "SLZ",
+            "VIX",
+            "PVH",
+            "RBR",
+            "VCP"
+        ]
+    },
+    "BSB": {
+        "nome": "Aeroporto Internacional Juscelino Kubitschek",
+        "longitude": -47.91172169662855,
+        "latitude": -15.87174755,
+        "rotas": [
+            "CGB",
+            "CNF",
+            "GRU",
+            "VCP",
+            "BEL",
+            "CGR",
+            "CWB",
+            "FOR",
+            "GIG",
+            "GYN",
+            "JPA",
+            "MAO",
+            "MCZ",
+            "NAT",
+            "POA",
+            "PVH",
+            "RBR",
+            "REC",
+            "SLZ",
+            "SSA",
+            "FLN",
+            "VIX",
+            "BVB",
+            "MCP",
+            "IGU",
+            "STM"
+        ]
+    },
+    "GIG": {
+        "nome": "Aeroporto Internacional Antonio Carlos Jobim",
+        "longitude": -43.25675597258166,
+        "latitude": -22.804528983744238,
+        "rotas": [
+            "VCP",
+            "CWB",
+            "GRU",
+            "BEL",
+            "BSB",
+            "CGB",
+            "CGR",
+            "CNF",
+            "FLN",
+            "FOR",
+            "GYN",
+            "IGU",
+            "JPA",
+            "MAO",
+            "MCZ",
+            "NAT",
+            "POA",
+            "REC",
+            "SLZ",
+            "SSA",
+            "VIX"
+        ]
+    },
+    "VIX": {
+        "nome": "Aeroporto Internacional Eurico de Aguiar Sales",
+        "longitude": -40.28273,
+        "latitude": -20.265792,
+        "rotas": [
+            "CNF",
+            "SSA",
+            "VCP",
+            "GIG",
+            "GRU",
+            "BSB",
+            "POA"
+        ]
+    },
+    "SSA": {
+        "nome": "Aeroporto Internacional Luis Eduardo Magalhaes",
+        "longitude": -38.331578860101644,
+        "latitude": -12.910039155485716,
+        "rotas": [
+            "CNF",
+            "GRU",
+            "JPA",
+            "REC",
+            "VCP",
+            "VIX",
+            "BSB",
+            "FOR",
+            "GIG",
+            "MCZ",
+            "NAT",
+            "CWB",
+            "GYN",
+            "CGB",
+            "IGU"
+        ]
+    },
+    "CNF": {
+        "nome": "Aeroporto Internacional Tancredo Neves",
+        "longitude": -43.96836942393943,
+        "latitude": -19.63339785,
+        "rotas": [
+            "BEL",
+            "BSB",
+            "CGB",
+            "CWB",
+            "FOR",
+            "GRU",
+            "GYN",
+            "MAO",
+            "POA",
+            "REC",
+            "SLZ",
+            "SSA",
+            "VCP",
+            "VIX",
+            "GIG",
+            "CFB",
+            "IGU",
+            "JPA",
+            "MCZ",
+            "NAT",
+            "PVH",
+            "FLN"
+        ]
+    },
+    "FOR": {
+        "nome": "Aeroporto Internacional Pinto Martins",
+        "longitude": -38.53932309012309,
+        "latitude": -3.7790752999999997,
+        "rotas": [
+            "BEL",
+            "CNF",
+            "JPA",
+            "NAT",
+            "PHB",
+            "REC",
+            "SLZ",
+            "VCP",
+            "BSB",
+            "GIG",
+            "GRU",
+            "SSA",
+            "MAO",
+            "IGU",
+            "POA",
+            "VIX"
+        ]
+    },
+    "MAO": {
+        "nome": "Aeroporto Internacional Eduardo Gomes",
+        "longitude": -60.0453385,
+        "latitude": -3.0321357,
+        "rotas": [
+            "BEL",
+            "BVB",
+            "CNF",
+            "PVH",
+            "STM",
+            "TBT",
+            "VCP",
+            "GRU",
+            "BSB",
+            "GIG",
+            "FOR",
+            "REC",
+            "RBR",
+            "SSA"
+        ]
+    },
+    "SLZ": {
+        "nome": "Aeroporto Internacional Marechal Hugo da Cunha Machado",
+        "longitude": -44.236275057833744,
+        "latitude": -2.5832618219802477,
+        "rotas": [
+            "CNF",
+            "FOR",
+            "BEL",
+            "BSB",
+            "GIG",
+            "GRU",
+            "REC"
+        ]
+    },
+    "POA": {
+        "nome": "Aeroporto Internacional Salgado Filho",
+        "longitude": -51.16639779619565,
+        "latitude": -29.995268449999998,
+        "rotas": [
+            "CNF",
+            "CWB",
+            "GRU",
+            "IGU",
+            "VCP",
+            "BSB",
+            "FLN",
+            "GIG",
+            "MCZ"
+        ]
+    },
+    "REC": {
+        "nome": "Aeroporto Internacional Gilberto Freyre",
+        "longitude": -34.92271835508188,
+        "latitude": -8.1256775,
+        "rotas": [
+            "CNF",
+            "FOR",
+            "GRU",
+            "MCZ",
+            "NAT",
+            "SSA",
+            "VCP",
+            "BSB",
+            "GIG",
+            "JPA",
+            "VIX"
+        ]
+    },
+    "CWB": {
+        "nome": "Aeroporto Internacional Afonso Pena",
+        "longitude": -49.16736187564199,
+        "latitude": -25.53281285,
+        "rotas": [
+            "POA",
+            "CNF",
+            "GRU",
+            "IGU",
+            "VCP",
+            "BSB",
+            "GIG",
+            "SSA",
+            "FLN",
+            "CGR",
+            "FOR"
+        ]
+    },
+    "BEL": {
+        "nome": "Aeroporto Internacional Val de Cans",
+        "longitude": -48.47962385123449,
+        "latitude": -1.3896508,
+        "rotas": [
+            "CNF",
+            "FOR",
+            "MAO",
+            "MCP",
+            "STM",
+            "BSB",
+            "GIG",
+            "GRU",
+            "SLZ",
+            "CGB",
+            "REC"
+        ]
+    },
+    "VCP": {
+        "nome": "Aeroporto Internacional de Campinas-Viracopos",
+        "longitude": -47.1418432690333,
+        "latitude": -23.00605625,
+        "rotas": [
+            "BSB",
+            "CFB",
+            "CGB",
+            "CGR",
+            "CNF",
+            "CWB",
+            "FLN",
+            "FOR",
+            "GIG",
+            "GYN",
+            "IGU",
+            "JPA",
+            "MAO",
+            "MCZ",
+            "NAT",
+            "POA",
+            "REC",
+            "SSA",
+            "VIX",
+            "BEL",
+            "PHB"
+        ]
+    },
+    "NAT": {
+        "nome": "Aeroporto Internacional Governador Aluizio Alves",
+        "longitude": -35.36213529732427,
+        "latitude": -5.77304275,
+        "rotas": [
+            "CNF",
+            "REC",
+            "VCP",
+            "BSB",
+            "FOR",
+            "GIG",
+            "GRU",
+            "SSA"
+        ]
+    },
+    "JPA": {
+        "nome": "Aeroporto Internacional Presidente Castro Pinto",
+        "longitude": -34.95030583440195,
+        "latitude": -7.148930699999999,
+        "rotas": [
+            "FOR",
+            "SSA",
+            "VCP",
+            "BSB",
+            "GIG",
+            "GRU",
+            "MCZ"
+        ]
+    },
+    "FLN": {
+        "nome": "Aeroporto Internacional Hercilio Luz",
+        "longitude": -48.5471621,
+        "latitude": -27.6738904,
+        "rotas": [
+            "VCP",
+            "GIG",
+            "GRU",
+            "POA",
+            "BSB",
+            "CWB"
+        ]
+    },
+    "BVB": {
+        "nome": "Aeroporto Internacional Atlas Brasil Cantanhede",
+        "longitude": -60.69088998008712,
+        "latitude": 2.8467389,
+        "rotas": [
+            "MAO",
+            "BSB"
+        ]
+    },
+    "MCP": {
+        "nome": "Aeroporto Internacional Alberto Alcolumbre",
+        "longitude": -51.07059996039651,
+        "latitude": 0.0505785,
+        "rotas": [
+            "BEL",
+            "BSB"
+        ]
+    },
+    "PVH": {
+        "nome": "Aeroporto Internacional Governador Jorge Teixeira de Oliveira",
+        "longitude": -63.900493918125576,
+        "latitude": -8.70990265,
+        "rotas": [
+            "CGB",
+            "MAO",
+            "RBR",
+            "BSB",
+            "GRU"
+        ]
+    },
+    "STM": {
+        "nome": "Aeroporto Internacional de Santarem",
+        "longitude": -54.786157438100595,
+        "latitude": -2.423580810814083,
+        "rotas": [
+            "BEL",
+            "MAO",
+            "BSB"
+        ]
+    },
+    "CGB": {
+        "nome": "Aeroporto Internacional Marechal Rondon",
+        "longitude": -56.10937964178432,
+        "latitude": -15.6594936,
+        "rotas": [
+            "GYN",
+            "BSB",
+            "CGR",
+            "CNF",
+            "GRU",
+            "PVH",
+            "VCP",
+            "GIG",
+            "REC"
+        ]
+    },
+    "CGR": {
+        "nome": "Aeroporto Internacional de Campo Grande",
+        "longitude": -54.68224625125994,
+        "latitude": -20.471576849999998,
+        "rotas": [
+            "CGB",
+            "GRU",
+            "VCP",
+            "BSB",
+            "GIG",
+            "CWB"
+        ]
+    },
+    "MCZ": {
+        "nome": "Aeroporto Internacional Zumbi dos Palmares",
+        "longitude": -35.7925282592017,
+        "latitude": -9.51084465,
+        "rotas": [
+            "REC",
+            "VCP",
+            "BSB",
+            "GIG",
+            "GRU",
+            "SSA",
+            "POA"
+        ]
+    },
+    "IGU": {
+        "nome": "Aeroporto Internacional de Foz do Iguacu",
+        "longitude": -54.49060873125,
+        "latitude": -25.5930616,
+        "rotas": [
+            "CWB",
+            "POA",
+            "VCP",
+            "GIG",
+            "GRU",
+            "BSB"
+        ]
+    },
+    "CFB": {
+        "nome": "Aeroporto Internacional de Cabo Frio",
+        "longitude": -42.076586063102596,
+        "latitude": -22.923360950000003,
+        "rotas": [
+            "VCP"
+        ]
+    },
+    "CZS": {
+        "nome": "Aeroporto Internacional de Cruzeiro do Sul",
+        "longitude": -72.77471470435958,
+        "latitude": -7.598823149999999,
+        "rotas": [
+            "RBR"
+        ]
+    },
+    "RBR": {
+        "nome": "Aeroporto Internacional Placido de Castro",
+        "longitude": -67.91773148750794,
+        "latitude": -9.701969204642976,
+        "rotas": [
+            "PVH",
+            "BSB",
+            "CZS",
+            "GRU",
+            "MAO"
+        ]
+    },
+    "TBT": {
+        "nome": "Aeroporto Internacional de Tabatinga",
+        "longitude": -69.93548245403075,
+        "latitude": -4.255893,
+        "rotas": [
+            "MAO"
+        ]
+    },
+    "PHB": {
+        "nome": "Aeroporto Internacional de Parnaiba",
+        "longitude": -41.72985967269162,
+        "latitude": -2.8952130499999997,
+        "rotas": [
+            "FOR"
+        ]
+    },
+    "GYN": {
+        "nome": "Aeroporto Internacional Santa Genoveva",
+        "longitude": -49.21586870072879,
+        "latitude": -16.63142488694419,
+        "rotas": [
+            "CGB",
+            "CNF",
+            "GRU",
+            "VCP",
+            "BSB",
+            "GIG",
+            "REC",
+            "SSA"
+        ]
+    }
+}

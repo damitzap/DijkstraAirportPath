@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
-
+//Classe que armazena o resultado das consultas dos usuarios no banco de dados
 public class ConsultResultsDAO {
     public void save(List<Node> shortestPath){
         String sql = "INSERT INTO consult_results (consult_id, airport_iata) VALUES ((SELECT MAX(id) FROM consult), ?);";

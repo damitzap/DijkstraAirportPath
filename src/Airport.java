@@ -7,8 +7,7 @@ public class Airport {
     private double longitude;
     private String city;
 
-
-
+    //Metodos
     public Airport(){}
     public Airport(String iata, String nome, String state, double latitude, double longitude, String city) {
         this.iata = iata;
@@ -18,55 +17,44 @@ public class Airport {
         this.longitude = longitude;
         this.city = city;
     }
-
     public String getIata() {
         return iata;
     }
-
     public void setIata(String iata) {
         this.iata = iata;
     }
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public String getState() {
         return state;
     }
-
     public void setState(String state) {
         this.state = state;
     }
-
     public double getLatitude() {
         return latitude;
     }
-
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
-
     public double getLongitude() {
         return longitude;
     }
-
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
-
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
 
+    //Metodo para calculo da distância entre o aeroporto de origem e destino
     public double distanceTo(Airport destino) {
 
         double lat1 = Math.toRadians(this.getLatitude());

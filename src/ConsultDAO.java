@@ -1,7 +1,8 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+//Classe que salva as consultas feitas pelo usuario, armazenando o IATA de Origem e Destino
+//da busca que esta sendo feita
 public class ConsultDAO {
     public void save(Route route){
         String sql = "INSERT INTO consult(iata_origem, iata_destino) VALUES (?, ?)";
@@ -35,7 +36,9 @@ public class ConsultDAO {
             }
         }
     }
-//Returns ID from consult table
+//Retornar o ID da ultima consulta da tabela consult
+//Sera usado para vincular a consulta ao resultado na tabela consultResults do banco de dados
+//O ID da consulta é a chave estrangeira da tabela de resultados
     public int getConsultID(){
         String sql = "SELECT MAX(id) FROM airportlist.consult";
         Connection connection = null;
