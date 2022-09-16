@@ -3,3 +3,5 @@
 [Clique aqui para acessar a descrição detalhada do Projeto](https://cgezes.notion.site/Menor-Caminho-entre-dois-Aeroportos-402e31e242654ee292b4d2f3b143b743)
 
 ![Screenshot](https://github.com/damitzap/DijkstraAirportPath/blob/master/MainScreenAirportPath.png)
+## Demonstração da Aplicação
+![hippo](https://github.com/damitzap/DijkstraAirportPath/blob/master/funcionamento_aplicacao.gif)
