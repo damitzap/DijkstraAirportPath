@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
+//Classe que representa um grafo como um conjunto de nós
 public class Graph {
 
     private Set<Node> nodes = new HashSet<>();

@@ -26,7 +26,7 @@ public class MainScreen extends JFrame {
     public MainScreen(){
         setContentPane(mainPanel);
         setTitle("Shortest Path Between Two Airports");
-        setSize(600,400);
+        setSize(600,450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 

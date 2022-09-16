@@ -1,24 +1,25 @@
 import java.util.*;
 
 public class Dijkstra {
-    private static void calculateMinimumDistance(Node evaluationNode, Double edgeWeigh, Node sourceNode) {
-        double sourceDistance = sourceNode.getDistance();
-        if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
-            evaluationNode.setDistance(sourceDistance + edgeWeigh);
-            LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
-            shortestPath.add(sourceNode);
-            evaluationNode.setShortestPath(shortestPath);
-        }
-    }
+
+    //Metodo que calcula o menor caminho da origem
     public static Graph calculateShortestPathFromSource(Graph graph, Node source) {
+
+        //A distancia do nó de origem para ele mesmo é setada como 0
         source.setDistance(0.0);
 
+        //Criação do conjunto de nós os quais já sabemos a distancia minima da origem - settledNodes
         Set<Node> settledNodes = new HashSet<>();
+
+        //Criação do conjunto de nós que podemos chegar a partir da origem,
+        // mas ainda não sabemos a distancia mínima - unsettledNodes
         Set<Node> unsettledNodes = new HashSet<>();
 
+        //Adicão do nó de origem ao conjunto de nós unsettled
         unsettledNodes.add(source);
 
         while (unsettledNodes.size() != 0) {
+            //
             Node currentNode = getLowestDistanceNode(unsettledNodes);
             unsettledNodes.remove(currentNode);
             for (Map.Entry < Node, Double> adjacencyPair: currentNode.getAdjacentNodes().entrySet()) {
@@ -33,7 +34,7 @@ public class Dijkstra {
         }
         return graph;
     }
-
+    //O método getLowestDistanceNode(), retorna o nó com a menor distância do conjunto unsettledNodes
     private static Node getLowestDistanceNode(Set < Node > unsettledNodes) {
         Node lowestDistanceNode = null;
         double lowestDistance = Double.MAX_VALUE;
@@ -46,6 +47,15 @@ public class Dijkstra {
         }
         return lowestDistanceNode;
     }
-
+    //método calculateMinimumDistance() compara a distância real com a recém calculada enquanto segue o caminho recém explorado
+    private static void calculateMinimumDistance(Node evaluationNode, Double edgeWeigh, Node sourceNode) {
+        double sourceDistance = sourceNode.getDistance();
+        if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
+            evaluationNode.setDistance(sourceDistance + edgeWeigh);
+            LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
+            shortestPath.add(sourceNode);
+            evaluationNode.setShortestPath(shortestPath);
+        }
+    }
 
 }
