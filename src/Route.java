@@ -1,7 +1,7 @@
-//Classe que armazena a rota de origem e destino
 public class Route {
     private String iataOrigem;
     private String iataDestino;
+
     public Route() {}
     public Route(String iataOrigem, String iataDestino) {
         this.iataOrigem = iataOrigem;

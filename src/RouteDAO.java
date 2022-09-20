@@ -1,21 +1,20 @@
 import java.sql.*;
 import java.util.ArrayList;
-//Classe que armazena e consulta as rotas armazenadas para cada aeroporto
-//Ou seja, para quais aeroportos que o aeroporto em questão faz conexão
+//Classe que armazena e consulta as rotas permitidas para cada aeroporto no Banco de Dados
 public class RouteDAO {
-    //Armazenamento do IATA dos aeroportos que fazem conexão com um determinado aeroporto
-    //identificado pelo seu IATA.
+    //O Metodo getRoutes é utilizado para obter a lista de rotas que um aeroporto possui
+    //O Metodo recebe como parâmetro o identificador IATA de 3 letras do aeroporto do qual se quer obter as rotas e retorno a Lista de Rotas
     public ArrayList<String> getRoutes(String key){
         String sql = "SELECT * FROM airportlist.routes AS R WHERE R.iata_origem=?";
         Connection connection = null;
         PreparedStatement pstm = null;
-        //Classe que ira recuperar os dados do Banco de Dados ***SELECT****
+        //Classe que ira recuperar os dados do Banco de Dados
         ResultSet rset = null;
         Airport airport = null;
+        //Criação de um ArrayList para armazenar as rotas do aeroporto
         ArrayList<String> routes = new ArrayList<>();
         try{
             connection = ConnectionModule.connector();
-
             pstm = (PreparedStatement) connection.prepareStatement(sql);
             pstm.setString(1,key);
             rset = pstm.executeQuery();
@@ -34,7 +33,6 @@ public class RouteDAO {
                 if (pstm != null) {
                     pstm.close();
                 }
-
                 if (connection != null) {
                     connection.close();
                 }
@@ -44,8 +42,9 @@ public class RouteDAO {
         }
         return routes;
     }
-    //Metodo para salvar as rotas de cada aeroporto
-    //Metodo empregado para popular o BD a partir do arquivo JSON com as rotas.
+
+    //O Método save é utilizado para salvar as rotas de cada aeroporto no banco de dados e recebe como parâmetro um objeto route
+    //Esse Método é empregado para popular o BD a partir de arquivo JSON com as rotas de cada aeroporto.
     public void save(Route route){
         String sql = "INSERT INTO routes(iata_origem, iata_destino) VALUES (?, ?)";
         Connection connection = null;
@@ -58,11 +57,8 @@ public class RouteDAO {
             //Adicao de valores que sao esperados pela query
             pstm.setString(1,route.getIataOrigem());
             pstm.setString(2, route.getIataDestino());
-
             //Execucao da query
             pstm.execute();
-
-            System.out.println("Rota Salva com Sucesso");
         } catch (Exception e) {
             e.printStackTrace();
         }finally {

@@ -6,7 +6,6 @@ public class Airport {
     private double latitude;
     private double longitude;
     private String city;
-
     //Metodos
     public Airport(){}
     public Airport(String iata, String nome, String state, double latitude, double longitude, String city) {
@@ -32,6 +31,7 @@ public class Airport {
     public String getState() {
         return state;
     }
+
     public void setState(String state) {
         this.state = state;
     }
@@ -56,12 +56,11 @@ public class Airport {
 
     //Metodo para calculo da distância entre o aeroporto de origem e destino
     public double distanceTo(Airport destino) {
-
         double lat1 = Math.toRadians(this.getLatitude());
         double lon1 = Math.toRadians(this.getLongitude());
         double lat2 = Math.toRadians(destino.getLatitude());
         double lon2 = Math.toRadians(destino.getLongitude());
-        // great circle distance in radians, using law of cosines formula
+        //comprimento do arco de circunferencia em radianos, usando a formula da lei dos cossenos
         double angle = Math.acos(Math.sin(lat1) * Math.sin(lat2)
                 + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));
         // Conversao para Km

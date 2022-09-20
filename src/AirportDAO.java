@@ -3,17 +3,18 @@ import java.util.HashMap;
 
 public class AirportDAO {
     //Metodo para obter todos os aeroportos armazenados no Banco de Dados
-    //Os aeroportos sao armazenados em um HashMap cuja chave é o IATA
+    //Os aeroportos sao armazenados em um HashMap cuja chave é o IATA do aeroporto
     public HashMap<String,Airport> getAirports(){
         String sql = "SELECT * FROM  airports";
-        //criacao de list para armazenar os dados dos aeroportos
+        //Criacao de uma collection para armazenar os dados dos aeroportos
         HashMap<String,Airport> airportsList = new HashMap<>();
         Connection connection = null;
         PreparedStatement pstm = null;
-        //Classe que ira recuperar os dados do Banco de Dados ***SELECT****
+        //Classe que irá percorrer os dados do Banco de Dados
         ResultSet rset = null;
         try{
             connection = ConnectionModule.connector();
+            //Criar um PreparedStatemente para executar uma query;
             pstm = (PreparedStatement) connection.prepareStatement(sql);
             rset = pstm.executeQuery();
             //Percorrer os dados do Banco
@@ -31,7 +32,7 @@ public class AirportDAO {
                 airport.setLongitude(rset.getDouble("longitude"));
                 //Recuperar a Cidade
                 airport.setCity(rset.getString("city"));
-                //Inserir dados no HashMap - Chave IATE, Aeroporto
+                //Inserir dados no HashMap - Chave String IATA, Objeto Aeroporto
                 airportsList.put(airport.getIata(), airport);
             }
         }catch (Exception  e){
@@ -55,12 +56,14 @@ public class AirportDAO {
         }
         return airportsList;
     }
-    //metodo para obter um aeroporto especifico atraves do IATA
+
+    //metodo para obter um aeroporto especifico atraves do identificador IATA
     public Airport getAirport(String key){
         String sql = "SELECT * FROM airportlist.airports AS A WHERE A.iata=?";
         Connection connection = null;
+        //Criar um PreparedStatemente para executar uma query;
         PreparedStatement pstm = null;
-        //Classe que ira recuperar os dados do Banco de Dados ***SELECT****
+        //Classe que irá percorrer os dados do Banco de Dados
         ResultSet rset = null;
         Airport airport = null;
         try{
@@ -104,7 +107,8 @@ public class AirportDAO {
         }
         return airport;
     }
-    //Metodo para salvar um novo aeroporto no banco de dados
+
+    //Metodo para salvar um novo aeroporto no banco de dados e recebe como parâmetro um objeto airport
     public void save(Airport airport){
         String sql = "INSERT INTO airports(iata, Nome, state, latitude, longitude, city) VALUES (?, ?, ?, ?, ?, ?)";
         Connection connection = null;
@@ -114,7 +118,7 @@ public class AirportDAO {
             connection = ConnectionModule.connector();
             //Criar um PreparedStatemente para executar uma query;
             pstm = (PreparedStatement) connection.prepareStatement(sql);
-            //Adicao de valores que sao esperados pela query
+            //Adicao de valores que sao esperados pela query obtidos a partir do objeto airport passado com parâmetro
             pstm.setString(1,airport.getIata());
             pstm.setString(2,airport.getNome());
             pstm.setString(3,airport.getState());

@@ -4,13 +4,13 @@ public class ConnectionModule {
     //Metodo para estabelecer a conexao com o MySql
     public static Connection connector() {
         java.sql.Connection connection = null;
-        //driver to calls db driver
+        //driver de conexão do java com o mysql
         String driver = "com.mysql.cj.jdbc.Driver";
-        // var to store info of db
+        // Informações referentes ao banco de dados
         String url = "jdbc:mysql://localhost:3306/airportlist";
         String user = "root";
         String password = "123456";
-        //establish connection with db
+        //Estabelecimento da Conexão com o Banco de Dados
         try {
             //Metodo para fazer com que a classe seja carregada pela JVM
             Class.forName(driver);
